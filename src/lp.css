@@ -420,7 +420,7 @@ html {
 }
 
 .lp-page .faq-question__text {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: clamp(1.125rem, 3.5vw, 1.65rem);
   font-weight: 600;
   line-height: 1.15;

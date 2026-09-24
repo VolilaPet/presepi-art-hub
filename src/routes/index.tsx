@@ -292,7 +292,7 @@ function Index() {
 
               <div className="offer-price">
                 <p>Seu Presépio Iluminado por</p>
-                <strong>R$ 129,00</strong>
+                <strong>R$ 129,90</strong>
                 <small>Pix ou cartão de crédito</small>
               </div>
 

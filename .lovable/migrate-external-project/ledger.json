@@ -1,0 +1,30 @@
+[
+  {
+    "capability": "Landing page estática (Presépio Iluminado LP)",
+    "source": "GitHub repo VolilaPet/Repositorio---Presepio-LP (dist/index.html, styles.css, script.js)",
+    "outcome": "Recriada como rota / em TanStack Start (src/routes/index.tsx + src/lp.css), FAQ convertido para React",
+    "status": "done",
+    "next_action": null
+  },
+  {
+    "capability": "Assets (3 imagens de galeria, foto do produto, vídeo MP4)",
+    "source": "dist/assets/*",
+    "outcome": "Copiados para public/assets/ e referenciados pela página",
+    "status": "done",
+    "next_action": null
+  },
+  {
+    "capability": "Link de checkout (botões de compra)",
+    "source": "script.js CHECKOUT_URL = '#' (placeholder no repositório original)",
+    "outcome": "Mantido como placeholder '#'; o repositório original também não tinha link real",
+    "status": "pending",
+    "next_action": "Usuário deve informar o link real de checkout (ex.: link de pagamento) para conectar os botões de compra"
+  },
+  {
+    "capability": "Banco de dados / autenticação / registros",
+    "source": "Não detectado — site estático sem backend",
+    "outcome": "Nada a migrar",
+    "status": "not_applicable",
+    "next_action": null
+  }
+]

@@ -308,7 +308,7 @@ function Index() {
 
               <a
                 className="offer-cta"
-                href={CHECKOUT_URL}
+                href="https://pay.hotmart.com/C107722970M?checkoutMode=10"
                 aria-label="Quero comprar meu Presépio Iluminado"
               >
                 <span>QUERO O MEU PRESÉPIO</span>

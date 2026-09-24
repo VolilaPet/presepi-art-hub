@@ -291,9 +291,9 @@ function Index() {
               <p className="offer-card__eyebrow">SÍMBOLO DE FÉ E AMOR</p>
 
               <div className="offer-price">
-                <p>Seu Presépio Iluminado por</p>
+                <p>Seu Presépio Iluminado por apenas</p>
                 <strong>R$ 129,90</strong>
-                <small>Pix ou cartão de crédito</small>
+                <small>Pix ou cartão de crédito em até 12x</small>
               </div>
 
               <a

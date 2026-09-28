@@ -5,7 +5,7 @@ import "../lp.css";
 // Substitua pelo link real do checkout quando ele estiver disponível.
 const CHECKOUT_URL = "#";
 
-const TITLE = "Presépio Iluminado da Sagrada Família";
+const TITLE = "Presépio Iluminado da Sagrada Família @@@@@@@@@";
 const DESCRIPTION =
   "Presépio Iluminado da Sagrada Família para trazer fé, significado e acolhimento ao seu lar. Frete grátis para todo o Brasil.";
 

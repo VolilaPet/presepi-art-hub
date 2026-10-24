@@ -111,6 +111,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         children: META_PIXEL_CODE,
       },
+      // Pixel UTMify
+      { children: `window.pixelId = "6adc28d4e3eca84ad62dc5c8";` },
+      { src: "https://cdn.utmify.com.br/scripts/pixel/pixel.js", async: true, defer: true },
     ],
   }),
   shellComponent: RootShell,

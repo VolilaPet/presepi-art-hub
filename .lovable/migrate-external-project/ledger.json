@@ -15,10 +15,17 @@
   },
   {
     "capability": "Link de checkout (botões de compra)",
-    "source": "script.js CHECKOUT_URL = '#' (placeholder no repositório original)",
-    "outcome": "Mantido como placeholder '#'; o repositório original também não tinha link real",
-    "status": "pending",
-    "next_action": "Usuário deve informar o link real de checkout (ex.: link de pagamento) para conectar os botões de compra"
+    "source": "Fornecido pelo usuário em chat",
+    "outcome": "Botão de compra aponta para https://gwx-industria-e-comercio.pay.yampi.com.br/r/3YTG5W9MTE (CHECKOUT_URL em src/routes/index.tsx); preço exibido R$ 97,90",
+    "status": "done",
+    "next_action": null
+  },
+  {
+    "capability": "Pixel de rastreamento (Meta/Facebook)",
+    "source": "Fornecido pelo usuário em chat",
+    "outcome": "Pixel 2547410062409993 instalado no head de src/routes/__root.tsx com evento PageView",
+    "status": "done",
+    "next_action": null
   },
   {
     "capability": "Banco de dados / autenticação / registros",

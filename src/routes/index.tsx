@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "../lp.css";
 
 // Substitua pelo link real do checkout quando ele estiver disponível.
@@ -78,6 +78,46 @@ const faqs = [
 
 function Index() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [soundBlocked, setSoundBlocked] = useState(false);
+
+  // Toca o vídeo com som. Os navegadores só liberam o áudio depois de um
+  // toque/tecla do visitante, então mantemos um botão de "ativar som" enquanto
+  // isso não acontece.
+  function enableSound() {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = false;
+    video.volume = 1;
+    // Se o vídeo já está rolando, o toque do visitante libera o áudio na hora.
+    if (!video.paused) setSoundBlocked(false);
+    video.play().then(
+      () => setSoundBlocked(false),
+      () => {
+        video.muted = true;
+        void video.play().catch(() => {});
+        setSoundBlocked(true);
+      },
+    );
+  }
+
+  useEffect(() => {
+    enableSound();
+    const video = videoRef.current;
+    const onGesture = () => enableSound();
+    const onVolumeChange = () => {
+      if (video && !video.muted) setSoundBlocked(false);
+    };
+    window.addEventListener("pointerdown", onGesture);
+    window.addEventListener("keydown", onGesture);
+    video?.addEventListener("volumechange", onVolumeChange);
+    return () => {
+      window.removeEventListener("pointerdown", onGesture);
+      window.removeEventListener("keydown", onGesture);
+      video?.removeEventListener("volumechange", onVolumeChange);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="lp-page">
@@ -162,16 +202,30 @@ function Index() {
         <section className="product-video" aria-label="Vídeo do Presépio Iluminado">
           <div className="product-video__slot">
             <video
+              ref={videoRef}
               autoPlay
-              muted
               loop
               playsInline
               controls
-              preload="metadata"
+              preload="auto"
               aria-label="Vídeo do Presépio Iluminado"
             >
               <source src="/assets/presepio-video.mp4" type="video/mp4" />
             </video>
+            {soundBlocked && (
+              <button
+                className="sound-toggle"
+                type="button"
+                onClick={enableSound}
+                aria-label="Ativar o som do vídeo"
+              >
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M4 9h4l5-4v14l-5-4H4V9Z" />
+                  <path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" />
+                </svg>
+                <span>ATIVAR SOM</span>
+              </button>
+            )}
           </div>
         </section>
 

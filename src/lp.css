@@ -271,11 +271,51 @@ html {
 }
 
 .lp-page .product-video__slot {
+  position: relative;
   width: min(100%, 520px);
   margin: 0 auto;
   overflow: hidden;
   border-radius: 16px;
   background: #f4eee6;
+}
+
+.lp-page .sound-toggle {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.95rem;
+  border: 0;
+  border-radius: var(--lp-radius-pill);
+  background: var(--lp-wine);
+  color: var(--lp-bg);
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgb(50 23 19 / 28%);
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.lp-page .sound-toggle:hover {
+  background: var(--lp-wine-hover);
+  transform: translateY(-1px);
+}
+
+.lp-page .sound-toggle svg {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
 }
 
 .lp-page .product-video__slot video {

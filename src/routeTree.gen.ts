@@ -10,33 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as Index_BACKUPRouteImport } from './routes/index_BACKUP'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Index_BACKUPRoute = Index_BACKUPRouteImport.update({
+  id: '/index_BACKUP',
+  path: '/index_BACKUP',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/index_BACKUP': typeof Index_BACKUPRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/index_BACKUP': typeof Index_BACKUPRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/index_BACKUP': typeof Index_BACKUPRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/index_BACKUP'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/index_BACKUP'
+  id: '__root__' | '/' | '/index_BACKUP'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  Index_BACKUPRoute: typeof Index_BACKUPRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/index_BACKUP': {
+      id: '/index_BACKUP'
+      path: '/index_BACKUP'
+      fullPath: '/index_BACKUP'
+      preLoaderRoute: typeof Index_BACKUPRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  Index_BACKUPRoute: Index_BACKUPRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -9,7 +9,7 @@ const TITLE = "Presépio Iluminado da Sagrada Família";
 const DESCRIPTION =
   "Presépio Iluminado da Sagrada Família para trazer fé, significado e acolhimento ao seu lar. Frete grátis para todo o Brasil.";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/index_BACKUP")({
   head: () => ({
     meta: [
       { title: TITLE },

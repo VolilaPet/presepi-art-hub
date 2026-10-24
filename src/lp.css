@@ -869,3 +869,22 @@ html {
     transition: none !important;
   }
 }
+
+/* Banner de oferta natalino */
+.lp-page .offer-card { position: relative; padding: 0; background: #3a180f; }
+.lp-page .offer-card__bg { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 18% 30%; }
+.lp-page .offer-card__content { position: relative; padding: clamp(1.4rem, 5vw, 2.4rem) clamp(1rem, 5vw, 2rem) clamp(1.5rem, 5vw, 2.4rem); background: linear-gradient(180deg, #3a180f 0%, #2a100b 100%); }
+.lp-page .offer-card__content::before { content: ""; position: absolute; left: 0; right: 0; top: -60px; height: 60px; background: linear-gradient(180deg, transparent, #3a180f); pointer-events: none; }
+.lp-page .offer-cta { background: linear-gradient(180deg, #d11a2c 0%, #a70f1e 100%); box-shadow: 0 10px 26px rgba(160, 15, 30, 0.4); }
+@media (min-width: 900px) {
+  .lp-page .offer-card { min-height: 520px; display: flex; align-items: center; justify-content: flex-end; }
+  .lp-page .offer-card__bg { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; object-position: left center; }
+  .lp-page .offer-card__content { width: 56%; margin-right: 4%; padding: 2.2rem 1rem; background: none; }
+  .lp-page .offer-card__content::before { display: none; }
+  .lp-page .offer-trust { flex-direction: row; justify-content: center; gap: 1.2rem; }
+  .lp-page .offer-trust i { display: block; width: 1px; height: 1.8rem; background: #c7a05b; }
+}
+@media (min-width: 900px) {
+  .lp-page .offer-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 38%, rgba(42,16,11,.75) 58%, rgba(42,16,11,.6) 100%); pointer-events: none; }
+  .lp-page .offer-card__content { z-index: 1; }
+}

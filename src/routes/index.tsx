@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import "../lp.css";
 
+import offerBg from "@/assets/banner-oferta-bg.jpg";
+
 const CHECKOUT_URL = "https://gwx-industria-e-comercio.pay.yampi.com.br/r/3YTG5W9MTE";
 
 const TITLE = "Presépio Iluminado da Sagrada Família @@@@@@@@@";
@@ -336,6 +338,13 @@ function Index() {
             </header>
 
             <div className="offer-card">
+              <img
+                className="offer-card__bg"
+                src={offerBg}
+                alt="Jesus segurando o Presépio Iluminado em um cenário natalino"
+                loading="lazy"
+              />
+              <div className="offer-card__content">
               <div className="offer-card__symbol" aria-hidden="true">
                 <span></span>
                 <b>†</b>
@@ -393,6 +402,7 @@ function Index() {
                   </svg>
                   Seus dados protegidos
                 </span>
+              </div>
               </div>
             </div>
           </div>

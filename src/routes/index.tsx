@@ -89,6 +89,8 @@ function Index() {
     if (!video) return;
     video.muted = false;
     video.volume = 1;
+    // Se o vídeo já está rolando, o toque do visitante libera o áudio na hora.
+    if (!video.paused) setSoundBlocked(false);
     video.play().then(
       () => setSoundBlocked(false),
       () => {
@@ -101,12 +103,18 @@ function Index() {
 
   useEffect(() => {
     enableSound();
+    const video = videoRef.current;
     const onGesture = () => enableSound();
+    const onVolumeChange = () => {
+      if (video && !video.muted) setSoundBlocked(false);
+    };
     window.addEventListener("pointerdown", onGesture);
     window.addEventListener("keydown", onGesture);
+    video?.addEventListener("volumechange", onVolumeChange);
     return () => {
       window.removeEventListener("pointerdown", onGesture);
       window.removeEventListener("keydown", onGesture);
+      video?.removeEventListener("volumechange", onVolumeChange);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

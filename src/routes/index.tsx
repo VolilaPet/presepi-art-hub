@@ -335,7 +335,7 @@ function Index() {
                 <div className="offer-price">
                   <p>Seu Presépio Iluminado por apenas</p>
                   <strong>R$ 97,90</strong>
-                  <small>Pix ou cartão de crédito em até 12x</small>
+                  <small>Pix, Boleto ou cartão de crédito em até 12x</small>
                 </div>
 
                 <a className="offer-cta" href={CHECKOUT_URL} aria-label="Quero comprar meu Presépio Iluminado">

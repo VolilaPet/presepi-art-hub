@@ -52,8 +52,7 @@ const faqs = [
       </svg>
     ),
     question: "O presépio precisa ficar ligado na tomada?",
-    answer:
-      "Não. A iluminação funciona com vela a bateria, sem necessidade de tomada ou fios.",
+    answer: "Não. A iluminação funciona com vela a bateria, sem necessidade de tomada ou fios.",
   },
   {
     icon: (
@@ -72,7 +71,7 @@ const faqs = [
       </svg>
     ),
     question: "Quais formas de pagamento vocês aceitam?",
-    answer: "Aceitamos Pix e cartão.",
+    answer: "Aceitamos Pix, Boleto ou Cartão.",
   },
 ];
 
@@ -97,15 +96,11 @@ function Index() {
             </h1>
 
             <p className="hero__copy">
-              Um Presépio Iluminado da Sagrada Família para trazer fé, significado e
-              acolhimento ao seu cantinho especial.
+              Um Presépio Iluminado da Sagrada Família para trazer fé, significado e acolhimento ao seu cantinho
+              especial.
             </p>
 
-            <a
-              className="cta-button"
-              href="#oferta"
-              aria-label="Quero comprar meu Presépio Iluminado"
-            >
+            <a className="cta-button" href="#oferta" aria-label="Quero comprar meu Presépio Iluminado">
               <span>QUERO O MEU PRESÉPIO</span>
               <span className="cta-arrow" aria-hidden="true">
                 ›
@@ -130,17 +125,12 @@ function Index() {
           />
         </figure>
 
-        <section
-          className="benefits"
-          aria-label="Informações e benefícios do Presépio Iluminado"
-        >
+        <section className="benefits" aria-label="Informações e benefícios do Presépio Iluminado">
           <div className="benefits__grid">
             <article className="benefit">
               <p className="benefit__eyebrow">ILUMINAÇÃO SUAVE</p>
               <h2 className="benefit__title">Uma luz delicada</h2>
-              <p className="benefit__description">
-                Que deixa o ambiente mais acolhedor.
-              </p>
+              <p className="benefit__description">Que deixa o ambiente mais acolhedor.</p>
             </article>
 
             <article className="benefit">
@@ -152,24 +142,14 @@ function Index() {
             <article className="benefit">
               <p className="benefit__eyebrow">PARA SEU CANTINHO DE FÉ</p>
               <h2 className="benefit__title">Um toque especial</h2>
-              <p className="benefit__description">
-                Ideal para oratório, sala ou espaço de oração.
-              </p>
+              <p className="benefit__description">Ideal para oratório, sala ou espaço de oração.</p>
             </article>
           </div>
         </section>
 
         <section className="product-video" aria-label="Vídeo do Presépio Iluminado">
           <div className="product-video__slot">
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              controls
-              preload="metadata"
-              aria-label="Vídeo do Presépio Iluminado"
-            >
+            <video autoPlay muted loop playsInline controls preload="metadata" aria-label="Vídeo do Presépio Iluminado">
               <source src="/assets/presepio-video.mp4" type="video/mp4" />
             </video>
           </div>
@@ -224,11 +204,7 @@ function Index() {
               {faqs.map((faq, index) => {
                 const isOpen = openIndex === index;
                 return (
-                  <article
-                    key={faq.question}
-                    className="faq-item"
-                    data-open={isOpen ? "true" : "false"}
-                  >
+                  <article key={faq.question} className="faq-item" data-open={isOpen ? "true" : "false"}>
                     <button
                       className="faq-question"
                       type="button"
@@ -266,20 +242,11 @@ function Index() {
           <div className="offer-section__inner">
             <header className="offer-heading">
               <h2 id="offer-title">
-                <span className="offer-title__line offer-title__line--primary">
-                  LEVE A SAGRADA FAMÍLIA
-                </span>
-                <span className="offer-title__line offer-title__line--accent">
-                  PARA UM LUGAR
-                </span>
-                <span className="offer-title__line offer-title__line--accent">
-                  ESPECIAL DA SUA CASA.
-                </span>
+                <span className="offer-title__line offer-title__line--primary">LEVE A SAGRADA FAMÍLIA</span>
+                <span className="offer-title__line offer-title__line--accent">PARA UM LUGAR</span>
+                <span className="offer-title__line offer-title__line--accent">ESPECIAL DA SUA CASA.</span>
               </h2>
-              <p>
-                Um símbolo de fé, amor e união, que ilumina e transforma o ambiente todos
-                os dias.
-              </p>
+              <p>Um símbolo de fé, amor e união, que ilumina e transforma o ambiente todos os dias.</p>
             </header>
 
             <div className="offer-card">
@@ -296,11 +263,7 @@ function Index() {
                 <small>Pix ou cartão de crédito em até 12x</small>
               </div>
 
-              <a
-                className="offer-cta"
-                href={CHECKOUT_URL}
-                aria-label="Quero comprar meu Presépio Iluminado"
-              >
+              <a className="offer-cta" href={CHECKOUT_URL} aria-label="Quero comprar meu Presépio Iluminado">
                 <span>QUERO O MEU PRESÉPIO</span>
                 <span className="offer-cta__arrow" aria-hidden="true">
                   →

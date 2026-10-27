@@ -132,7 +132,7 @@ function Index() {
             </div>
 
             <h1 id="hero-title">
-              Leve a presença e a luz da Sagrada Família
+              Leve a presença e a luz da Sagrada Família@@@@!
               <em>para o seu lar.</em>
             </h1>
 
